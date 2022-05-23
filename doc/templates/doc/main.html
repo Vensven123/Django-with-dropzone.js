@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+      Upload Page
+{% endblock title%}
+
+{% block content %}
+  <!-- Example of a form that Dropzone can take over -->
+<!-- <form action="upload/" method="POST" class="dropzone dz" id="drop_zone" >
+  {% csrf_token %}
+
+  <div class="fallback">
+        <input name="file" type="file" multiple/>
+
+  </div>
+     
+
+</form> -->
+
+<form action="upload/" method="POST" class="dropzone dz" id="zone">
+      {% csrf_token %}
+      <div class="fallback">
+        <input name="file" type="file" multiple />
+      </div>
+</form>
+
+
+{% endblock content %}

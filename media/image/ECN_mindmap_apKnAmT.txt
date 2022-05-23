@@ -1,0 +1,700 @@
+ECN
+	Requirement
+		Mind Map
+		Mind Map
+			ECN Project
+				Process
+					Issue Rised by Assembly Team
+					Design will update the status&nbsp;
+						Multiple Action plan
+						BOM -(Fab,Boughtout, Rew)
+					Purchase will update Boghtout items details
+					Vendor
+						Applicable Rework details
+						Applicable new item details
+				Software
+					Login Page
+						fields
+							UserName
+							Password
+						features
+							Captcha
+								Calculation text box field
+							Forgot Password(change by email)
+								open form**
+									fields
+										Email (type - textfield)
+									buttons
+										Submit
+										Cancel
+						5-May-2022
+							Not discussed
+					Header(Not Reviewed)
+						left side-company logo
+						center - project Name
+						right side
+							UserName display  with icon
+							Select Line
+								Select Machine
+							change password tab
+								open - form **
+									fields
+										Old Password    (type textfield)
+										New Password    (type textfield)
+										Confirm Password (type textfield)
+									buttons
+										Submit
+										Cancel
+							logout 
+					Left Side Navigation
+						side bar
+							Live Dashboard()
+								Analysis Will be displayed
+							User Settings(already we have)
+							Settings(Menu)
+								Role 
+								Department 
+								Rised by Team List 
+									All Team can be listed
+								Machine Status&nbsp; Master
+								Customer List
+									Valeo
+									DTVS
+									....
+								Machine List
+								&nbsp;Machinewise Station List
+								Stationwise Sub Assembly
+								Design Action Master
+								Category Master
+								Sub Category Master(
+									Based on cateogory
+								Purchase Action Master
+								Purchase Status Master
+								Vendor Action Master
+								Vendor Status Master
+							ECN Entry
+					Main Layout
+						ECN Entry(Menu)
+							Tab_1(IssueRise(Assembly )
+							Tab_2(Issue Attend(Design)
+							Tab_4(Boughtout (Purchase)Team)
+							Tab_5(Fabrication(Vendor) Team)
+							Tab_3(confirmation (Assembly)Team)
+						ECN Entry(Tab level details)
+							Tab_1(IssueRise_Team)
+								Add New
+									Open - form@@
+										fields
+											Issue Raised Date   (type - textfield(automatic- getdate format,logindate))
+												Automatic
+											Issue Raised Person (type - Dropdown as per the settings)
+												Automatic
+											Machine Status      (type - Dropdown as per the settings) 
+											Raise Team          (type - textfield display automatic as per the login) 
+												Automatic
+											Raise Team To       (type - Dropdown as per the settings)  
+												Drop down as per the setting
+											Machine Name           (type - Dropdown as per the settings) Automatic
+											Station Name        (type - Dropdown stationlist based on selected line)&nbsp;
+											Sub Assembly        (type - Dropdown sub assembly based on station selected)
+											Issue Details       (type - textfield 250 characters) 
+											Action Status       (type - Dropdown as per the settings) 
+											priority            (type - Dropdown static values low,Medium,high) 
+									Buttons
+										Save
+											Issue Reference     (after save if new -it will be automatically genrated eg:ECN22010001)
+											Update also will get automatically updated
+										Cancel
+								Table
+									All the Details&nbsp; w.r.t&nbsp; ECN
+										id
+										Issue Raised Date 
+										Issue Raised Person
+										Machine Status 
+										Raise Team 
+										Raise Team To
+										Line Name
+										Station Name
+										Sub Assembly
+										Issue Details
+										Action Status
+										priority
+										Issue Reference
+										Updated date
+									Columns
+										<div><span style="font-size: 20.8px;">Issue Ref (value get from tab_1 Issue Ref )</span></div>
+										<div><span style="font-size: 20.8px;">All the fields entered by all teams</span></div>
+										Action
+											Edit
+												open - form@@
+													fields
+														Issue Raised Date   (with date)xx
+														Issue Raised Person (with selected Value)
+														Machine Status      (with selected Value) 
+														Raise Team          (with selected Value) 
+														Raise Team To       (with selected Value)  
+														Line Name           (with selected Value)   
+														Station Name        (with selected Value)  
+														Sub Assembly        (with selected Value) 
+														Issue Details       (with selected Value) 
+														Action Status       (with selected Value) 
+														priority            (with selected Value) 
+														Issue Reference     (with value eg:ECN00001)
+													buttons
+														Update
+															Updated date will get automatically saved
+														Cancel
+											Delete
+												If No entry from Design??
+													Yes
+														Give popup that can not be deleted
+												No
+													Delete the entry
+												Super admin can delete
+							Tab_2(Design Team)
+								Table2
+									Columns
+										Issue Ref (value get from tab_1 Issue Ref )
+										All the fields entered by all teams
+									Edit 
+										open - form@@(Depends on Issue Ref)
+											fields(Can be edited)
+												Category (type - dropdown As per settings )
+												Sub Category (type - dropdown filter Category as per settings)
+												Change Description (type - textfields 250 char )
+												Part No/Drawing No  (type - textfield 50 char)
+												Indent No (type - textfield 50 char)
+													popup(phase-2)
+														Indent1:Nu
+														Indent 2:Nu
+												No of Line item (type - integerfield )
+												No of drawing(New) (type - integerfield)
+												No of drawing(Rework)  (type - integerfield)
+												Design Dept Issue Handle By
+													&nbsp;All applicable dept team members
+												Design Status (type - dropdown)
+													Closed
+												Remarks ( type - texfield 250 char)
+												problem image
+												Upload solution image
+												buttons
+													Update
+														Design Completion Date (get automatically when Design status is closed)
+														Design No of days colse to issue (type - integerfield get automatic (Completion date - Issue Date))
+													Cancel
+													View Solutions
+														Popup
+															images slides show
+							Tab_4(Purchase Team)
+								Table3
+									Columns(Can not be edited
+										Issue Ref (value get from tab_1 Issue Ref )
+										<div><span style="font-size: 20.8px;">All details entered by Assembly Team</span></div>
+										<div><span style="font-size: 20.8px;">All details entred by Design Team</span></div>
+										<div><span style="font-size: 20.8px;">All Details entered&nbsp; Vendor</span></div>
+									buttons
+										Edit 
+											open form@@
+												fields(Can be edited)
+													Issue ID(based on selected&nbsp; issue for editing)
+													Purchase Action (type - dropdown as per the settings)
+														NA is also one of the entry
+													Po Number  (type - textfield 50 char)
+													Po Date   (type - datefield)
+													Material Receipt Date (type - datefield)
+													Purchase Status (type - dropdown as per the settings )
+													Remarks
+													buttons
+														Update
+														Cancel
+							Tab_5(Vendor Team)
+								Table&nbsp;
+									columns
+										id
+										All the fields entered by other teams
+										buttons
+											Edit
+												open - form@@
+													fields
+														Vendor Action           Fields showing(Rew or new or both)
+															Decide from design
+														Po Number(Rework)       (type - textfield )
+														Po Date(Rework)         (type - Datefield)
+														Rework Target Date      (type - Datefiled)
+														Rework Completion Date  (type - Datefiled)
+														NewPart Po Number          (type - textfield)
+														NewPart Po Date           (type - Datefield)
+														Newpart Target Date     (type - Datefield)
+														Newpart Completion Date   (type - Datefield)
+														Vendor Status       (type - dropdown as per the settings)
+													buttons
+														Update
+															Check field entries based on decide
+															Date saved
+														Cancel
+							Tab3(Confirmation /Status update Team)
+								Table(
+									columns
+										id
+										<div><span style="font-size: 20.8px;">All the fields entered by all teams</span></div>
+										buttons
+											Edit
+												open form**
+													fields
+														Issue ID (get autometic )
+														Issue Details (get automatic)
+														Final Completion By (As per the RoleName)
+														Final Closing Status (type - dropdown)
+														Next Responsiable Team (type - dropdown as per the settings)- Not Required
+														Final No of days to close the issue (get automatic (finall Completion date - Issue Date))   
+															buttons
+																Update
+																	" Closed" is selected
+																		Validation
+																			Check all necessary details by design for validation
+																			Check number of new parts&nbsp; purchase team entry&nbsp; validation
+																			Check Rework or new part or both for vendor team entry validation
+																			Check all necessary details by assembly team for validation&nbsp;
+																		&nbsp;validation success
+																			Final Completion Date (get automatically when Final closing date is closed)
+																			Next Responsible team to be Like "NA"
+																	"Closed" is not selected
+																		update enetered Fields
+																Cancel
+							Tab6(Points Closing)
+								Tick All details checked and verified
+								Apply
+								Cancel
+						Settings(Individual Page)
+							Role Settings
+								Table(display Role details)
+									columns
+										id
+										Role Name
+										Action(Edit/Delete)
+									Buttons
+										Add New(pressed)
+											form** -(Opened)
+												fields
+													Role Name (type - textfield)
+												buttons
+													Save
+													Cancel
+										Edit
+											form**
+												fields 
+													Role Name(display to selected row value )
+												buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											button
+												Delete
+												Cancel
+							Permission Settings
+								Table(Display the permission details)
+									Columns
+										id
+										Role Name
+							Department Settings
+								Table(Display the Department Details)
+									Columns
+										id
+										Department
+										Action(Edit/Delete)
+									buttons
+										Add New
+											Open - form**
+												fields
+													Department (type - textfield)
+												buttons
+													Save
+													Cancel
+										Edit
+											fields
+												Department(display to selected row value)
+													Buttons
+												Update
+												Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Status Settings
+								Table(Display the Status Details)
+									Columns
+										id
+										Status Name
+										Action(Edit/Delete)
+									buttons
+										Add New
+											open - form**
+												fields
+													Status Name (type - textfield)
+												Buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													Status Name(with value)
+												Buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Team List
+								Table(Dispaly details)
+									columns
+										id
+										Team Name
+										Action(Edit/Delete)
+									buttons
+										Add New
+											Open - form**
+												fields
+													Team Name (type - textfield)
+												Buttons
+													Save
+													cancel
+										Edit
+											open - form**
+												fields
+													TargetDepartment(with Value)
+												Buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											Buttons
+												Delete
+												Cancel
+							Line Name Settings
+								Table(Dispaly details)
+									columns
+										id
+										LineName
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open - form**
+												fields
+													LineName (type - textfields)
+												Buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													LineName(with value)
+												buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											Buttons
+												Delete
+												Cancel
+							Station List Settings
+								Table
+									Columns
+										Id
+										Line Name
+										Station Name
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open - form**
+												fields 
+													Line Name (type - dropdown)
+													Station Name (type - textfield)
+												buttons
+													Save
+													Cancel
+										Edit
+											open -- form**
+												fields
+													Line Name (with selected value)
+													Station Name (with value)
+														Buttons
+															Update
+															Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Sub Assembly Settings
+								Table
+									columns
+										id
+										Line Name
+										Station Name
+										Sub Assembly Name
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open - form**
+												fields
+													Line Name    (type - dropdown)
+													Station Name (type - dropdown)
+													Sub Assembly (type - textfields)
+												Buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													LineName (with selected value)
+													Station Name (with selected value)
+													Sub Assembly  (with value)
+												Buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation Alert
+											Buttons
+												Delete
+												Cancel
+							Action List Settings
+								Table
+									Columns
+										id
+										Action Name
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open - form**
+												fields
+													Action Name (type - textfields)
+												buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													Action Name(with value)
+														buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Priority(optional)
+							Category Settings
+								Table
+									Columns
+										id
+										Category
+										Action(Edit/Delete)
+									buttons
+										Add New
+											open form**
+												fields 
+													category (type:textfield 150char)
+												buttons
+													Save
+													Cancel
+										Edit
+											open form**
+												fields
+													category(with value)
+												butttons
+													Update
+													Cancel
+										Delete
+											Popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Sub Category Settings
+								Table
+									columns
+										id
+										Category
+										Sub Category
+										Action(Edit/Delete)
+									buttons
+										Add New 
+											Open form**
+												fields
+													Category (type - dropdown )
+													Sub Category (type - textfield)
+												Buttons
+													Save
+													Cancel
+										Edit 
+											open form**
+												fields 
+													Category (with value)
+													Sub Category (with value)
+												Buttons
+													Update
+													Cancel
+										Delete
+											Popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Purchase Action Settings
+								Table
+									Columns
+										id
+										Purchase Action
+										Action
+									Buttons
+										Add New
+											open - form**
+												fields
+													Purchase Action(type : texfields 50 char)
+												buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													Purchase Action (with value)
+												buttons
+													Update
+													Cancel
+										Delete
+											popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Purchase Status Settings
+								Table
+									columns
+										id
+										Purchase Status
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open form**
+												fields
+													Purchase Status (type - textfields 50 char) 
+														buttons
+													Save
+													Cancel
+										Edit
+											Open form**
+												fields
+													purchase Status(with value)
+														buttons
+															Update
+															Cancel
+										Delete
+											Popup
+												Delete Confirmation alert
+											buttons 
+												Delete
+												Cancel
+							Vendor Action Settings
+								Table
+									columns
+										id
+										Vendor Action
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open -form**
+												fields
+													Vendor Action (type - textfield 50 char)
+												buttons
+													Save
+													Cancel
+										Edit
+											open - form**
+												fields
+													Vendor Action(with value)
+												buttons
+													Update
+													Cancel
+										Delete
+											Popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel
+							Vendor Status Settings
+								Table 
+									columns
+										id
+										Vendor Status
+										Action(Edit/Delete)
+									Buttons
+										Add New
+											open - form**
+												fields
+													Vendor Status(type - textfield 50 char)
+												buttons
+													Save
+													Cancel
+														Edit
+											open - form**
+												fields
+													Vendor status(with value)
+												buttons
+													Update
+													Cancel
+														Delete
+											Popup
+												Delete Confirmation alert
+											buttons
+												Delete
+												Cancel             
+					Footer
+						Copywrite info
+					Mail/SMS
+						Not applicable in 1st phase
+					Future phase
+						Multiple purchase and vendor action for same issue
+						Multiple design entry for same issue
+							introduce action id
+	Review
+		5-May-2022
+			Login Demonstarted
+				No captcha
+			Forgot password
+				working
+			Change password
+				working
+			5 Tabs shown
+			Tab1
+				Table shown in Tab1
+				Add new demonstarted
+					New issue craeted in Database in issue id
+					Each filed in add form demonstrated
+						Pending
+							line must be selectable in Top
+							Rise team to should all team
+							Show each issue in table
+		6-May2022					
+			added line selection in top 
+			Tab-1
+			   created the edit view 
+			   Updated function
+			   Delete function 
+			   only displayed assembly details in table
+			Tab-2
+			   Created the Add view
+			   Displayed design details in main table
+		

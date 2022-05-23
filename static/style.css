@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(214, 209, 203);
+}
+
+.dz {
+    border: dashed !important;
+    border-color: black !important;
+    border-radius: 10px;
+}
+
+.dz:hover{
+    background-color: blue;
+}
+
